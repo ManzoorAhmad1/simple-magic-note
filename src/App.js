@@ -5,6 +5,7 @@ function App() {
     <h1>Let get start</h1>
     <p>this is a world</p>
     <p>this is a beautiful world</p>
+    <h2>this is another heading</h2>
     </>
   );
 }
