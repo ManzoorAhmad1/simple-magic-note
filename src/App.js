@@ -6,6 +6,7 @@ function App() {
     <p>this is a world</p>
     <p>this is a beautiful world</p>
     <h2>this is another heading</h2>
+    <h2>this is another heading</h2>
     </>
   );
 }
