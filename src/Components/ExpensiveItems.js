@@ -1,13 +1,20 @@
 import "./ExpensiveItems.css";
-function ExpensiveItem(){
+function ExpensiveItem(props){
+    const month=props.date.toLocaleString("en-US",{month:"long"})
+    const day=props.date.toLocaleString("en-US",{day:"2-digit"});
+    const year=props.date.getFullYear();
     return(
         <div className="expense-item">
-            <div>march 12th 2023</div>
-            <div className="expense-item__description">
-                <h2>Car Insurance</h2>
-                <div className="expense-item__price">$240.34</div>
+            <div>
+            <div>{month}</div>
+            <div>{day}</div>
+            <div>{year}</div>
             </div>
-        </div>
+            <div className="expense-item__description">
+                <h2>{props.title}</h2>
+                <div className="expense-item__price">${props.price}</div>
+            </div>
+        </div>  
     )
 }
-export default ExpensiveItem;
+export default ExpensiveItem;  
