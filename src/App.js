@@ -1,6 +1,6 @@
 import './App.css';
 // import TextFile from "./Components/TextFile.js"
-import ExpensiveItem from "./Components/ExpensiveItems"
+import ExpensiveItem from "./Components/Expense/ExpensiveItems"
 function App() {
   const expense=[
     {id:'e',title:"Car Insurance",Date:new Date(2023,3,22),price:"234.23"},
