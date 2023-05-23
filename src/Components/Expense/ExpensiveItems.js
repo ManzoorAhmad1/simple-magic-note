@@ -5,10 +5,12 @@ function ExpensiveItem(props) {
   const month = props.date.toLocaleString("en-US", { month: "long" });
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
   const year = props.date.getFullYear();
-  const [title, setTitle] = useState("initalValue");
+  const [title, setTitle] = useState(props.title);
   const clickedHandler = () => {
- setTitle("updated!!!!!!")
-    console.log(title);
+    setTimeout(() => {
+        setTitle("updated!!!!!!");
+        console.log(title);
+    }, 2000);
   };
   return (
     <Card className="expense-item">
