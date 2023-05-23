@@ -1,5 +1,5 @@
 import './App.css';
-import TextFile from "./Components/TextFile.js"
+// import TextFile from "./Components/TextFile.js"
 import ExpensiveItem from "./Components/ExpensiveItems"
 function App() {
   const expense=[
@@ -15,7 +15,7 @@ function App() {
     <ExpensiveItem title={expense[1].title} date={expense[1].Date} price={expense[1].price}/>
     <ExpensiveItem title={expense[2].title} date={expense[2].Date} price={expense[2].price}/>
     <ExpensiveItem title={expense[3].title} date={expense[3].Date} price={expense[3].price}/> 
-    <TextFile/>
+    {/* <TextFile/>  this is a practice file which show how javascript code working actualy behind the seen */}
     </>
   );
 }
