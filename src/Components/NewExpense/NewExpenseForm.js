@@ -1,51 +1,71 @@
 import React, { useState } from "react";
 import "./NewExpenseForm.css";
-const NewExpenseForm = () => {
-  // const [interTitle,setInterTitle]=useState("");
-  // const [interAmount,setInterAmount]=useState("")
-  // const [interDate,setInterDate]=useState("");
-  const [userInput, setUserInput] = useState({
-    interTitle: "",
-    interAmount: "",
-    interDate: "",
-  });
+const NewExpenseForm = (props) => {
+  const [interTitle, setInterTitle] = useState("");
+  const [interAmount, setInterAmount] = useState("");
+  const [interDate, setInterDate] = useState("");
+  // const [userInput, setUserInput] = useState({
+  //   interTitle: "",
+  //   interAmount: "",
+  //   interDate: "",
+  // });
   const titleChangeHandler = (event) => {
-    //  setInterTitle(event.target.value)
-    // in this way to update the data chooseAble data will be updated but other elem
-    //  content cannot be lose it will show another Array
-    // this is way it is not a good  
+    setInterTitle(event.target.value);
+
     // setUserInput({
     //   ...userInput,
     //   interTitle:,
     // });
-    setUserInput((inputValue)=>{
-      return({...inputValue,interTitle:event.target.value})
-    })
+    // setUserInput((inputValue)=>{
+    //   return({...inputValue,interTitle:event.target.value})
+    // })
   };
   const amountChangeHandler = (event) => {
-    // setInterAmount(event.target.value);
-    setUserInput({
-      ...userInput,
-      interAmount: "",
-    });
+    setInterAmount(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   interAmount: "",
+    // });
   };
   const dateChangeHandler = (event) => {
-    // setInterDate(event.target.value);
-     setUserInput({
-      ...userInput,
-      interDate: "",
-    });
+    setInterDate(event.target.value);
+    //  setUserInput({
+    //   ...userInput,
+    //   interDate: "",
+    // });
+  };
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+    const expenseFormData = {
+      title: interTitle,
+      amount: interAmount,
+      date: new Date(interDate),
+    };
+    props.onSaveExpenseData(expenseFormData)
+    setInterTitle("");
+    setInterAmount("");
+    setInterDate("");
   };
   return (
-    <form>
+    <form onSubmit={formSubmitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" min="0.01" onChange={titleChangeHandler} />
+          <input
+            type="text"
+            min="0.01"
+            value={interTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" min="0.01" onChange={amountChangeHandler} />
+          <input
+            type="number"
+            min="0.01"
+            value={interAmount}
+            onChange={amountChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
@@ -53,6 +73,7 @@ const NewExpenseForm = () => {
             type="date"
             min="2023-3-1"
             max="2023-6-1"
+            value={interDate}
             onChange={dateChangeHandler}
           />
         </div>
