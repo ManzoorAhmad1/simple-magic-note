@@ -11,10 +11,16 @@ const NewExpenseForm = () => {
   });
   const titleChangeHandler = (event) => {
     //  setInterTitle(event.target.value)
-    setUserInput({
-      ...userInput,
-      interTitle: "",
-    });
+    // in this way to update the data chooseAble data will be updated but other elem
+    //  content cannot be lose it will show another Array
+    // this is way it is not a good  
+    // setUserInput({
+    //   ...userInput,
+    //   interTitle:,
+    // });
+    setUserInput((inputValue)=>{
+      return({...inputValue,interTitle:event.target.value})
+    })
   };
   const amountChangeHandler = (event) => {
     // setInterAmount(event.target.value);
