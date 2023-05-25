@@ -29,9 +29,13 @@ function App() {
       price: "155.23",
     },
   ];
+  const addExpenseDataHandler=(parseData)=>{
+    console.log("In App.js")
+    console.log(parseData)
+  }
   return (
     <>
-      <NewExpense />
+      <NewExpense onAddExpenseData={addExpenseDataHandler} />
       <ExpensiveItem
         title={expense[0].title}
         date={expense[0].Date}
