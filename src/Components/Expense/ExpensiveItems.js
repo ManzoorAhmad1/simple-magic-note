@@ -13,7 +13,8 @@ function ExpensiveItem(props) {
     }, 2000);
   };
   return (
-    <Card className="expense-item">
+    <>
+      <Card className="expense-item">
       <div>
         <div>{month}</div>
         <div>{day}</div>
@@ -25,6 +26,8 @@ function ExpensiveItem(props) {
       </div>
       <button onClick={clickedHandler}>Clicked here</button>
     </Card>
+    </>
+
   );
 }
 export default ExpensiveItem;
