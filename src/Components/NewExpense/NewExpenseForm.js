@@ -38,7 +38,7 @@ const NewExpenseForm = (props) => {
     event.preventDefault();
     const expenseFormData = {
       title: interTitle,
-      amount: interAmount,
+      amount: interAmount, 
       date: new Date(interDate),
     };
     props.onSaveExpenseData(expenseFormData)
@@ -53,7 +53,6 @@ const NewExpenseForm = (props) => {
           <label>Title</label>
           <input
             type="text"
-            min="0.01"
             value={interTitle}
             onChange={titleChangeHandler}
           />
@@ -62,7 +61,6 @@ const NewExpenseForm = (props) => {
           <label>Amount</label>
           <input
             type="number"
-            min="0.01"
             value={interAmount}
             onChange={amountChangeHandler}
           />
@@ -71,8 +69,6 @@ const NewExpenseForm = (props) => {
           <label>Date</label>
           <input
             type="date"
-            min="2023-3-1"
-            max="2023-6-1"
             value={interDate}
             onChange={dateChangeHandler}
           />
