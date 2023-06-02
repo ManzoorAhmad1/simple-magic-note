@@ -25,7 +25,7 @@ const Expense = (props) => {
   }
   return (
     <div className="Expense">
-      <ExpensesFilter selected={filterData} onFilterData={onSaveFilterData} />
+      <ExpensesFilter selectedData={filterData } onFilterData={onSaveFilterData} />
       {/* this is a second step to type/////////////////////// */}
       {/* {filterContant} */}
       {/* this is a first step to type////////////////// */}

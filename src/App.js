@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <NewExpense onAddExpenseData={addExpenseDataHandler} />
-      <Expense item={initialData}  />
+      <Expense item={initialData} selectedData={initialData} />
       {/* <TextFile/>  this is a practice file which show how javascript code working actualy behind the seen */}
     </>
   );
